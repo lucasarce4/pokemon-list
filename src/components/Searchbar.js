@@ -33,7 +33,8 @@ function Searchbar ({pokeList}){
     return <div onBlur={()=>setFocus(false)}>
             <div className='relative'>
 
-                <input onFocus={(e)=>handleFocus(e)} 
+                <input placeholder='Search by name...'
+                onFocus={(e)=>handleFocus(e)} 
                 onChange={handleList}
                 className="border border-slate-400" type="text" />
                 {!focus ? null :
@@ -42,7 +43,7 @@ function Searchbar ({pokeList}){
                          searchList.map(item=>{
                          return <div
                             key={item.name} 
-                            className="border border-gray-400 py-1 px-2 cursor-pointer hover:bg-slate-300"
+                            className="border border-gray-400 py-1 px-2 cursor-pointer capitalize hover:bg-slate-300"
                             onClick={()=>handleClick(item)}
                             onMouseDown={event => event.preventDefault()}>
                                 {item.name}
